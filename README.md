@@ -3,7 +3,7 @@
 # Steps to create
 
 ```bash
-$ ionic start IonicTestProject sidemenu
+$ ionic start IonicTestProject sidemenu -i com.rokolabs.cordova.test
 $ cd IonicTestProject
 $ ionic build ios
 $ ionic build android
@@ -71,6 +71,31 @@ public class MainActivity extends CordovaActivity {
     }
 }
 
+```
+
+# Adding setUser
+
+* Replace function **doLogin** at ***www/js/controllers.js*** with following snippet:
+
+```javascript
+$scope.doLogin = function() {
+  console.log('Doing login', $scope.loginData);
+
+  var success = function(){
+  alert("OK");
+  };
+  var failure = function(message){
+  alert("Error calling plugin "+message);
+  };
+
+  rokomobi.setUser({userName: $scope.loginData.username},success,failure);
+
+  // Simulate a login delay. Remove this and replace with your login
+  // code if using a login system
+  $timeout(function() {
+    $scope.closeLogin();
+  }, 1000);
+};
 ```
 
 # Link to portal app
