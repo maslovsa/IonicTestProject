@@ -1,0 +1,10 @@
+{
+    "com.rokolabs.rokomobi": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-rokomobi"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}

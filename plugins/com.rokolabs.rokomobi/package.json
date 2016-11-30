@@ -1,0 +1,35 @@
+{
+  "name": "cordova-plugin-rokomobi",
+  "version": "0.0.16",
+  "description": "Plugin for RokoMobi portal",
+  "cordova": {
+    "id": "com.rokolabs.rokomobi",
+    "platforms": [
+      "android",
+      "ios",
+      "wp7"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ROKOLabs/ROKO.Mobi.Cordova.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-wp7"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.4.0"
+    }
+  ],
+  "author": "RokoMobi",
+  "license": "free",
+  "bugs": {
+    "url": "https://github.com/ROKOLabs/ROKO.Mobi.Cordova/issues"
+  },
+  "homepage": "https://github.com/ROKOLabs/ROKO.Mobi.Cordova#readme"
+}

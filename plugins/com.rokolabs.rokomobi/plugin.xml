@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.rokolabs.rokomobi"
+        version="0.0.16">
+
+  <name>RokoMobi</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/rokomobi.js" target="js/rokomobi.js"/>
+
+  <js-module src="www/rokomobi.js" name="rokomobi">
+    <clobbers target="rokomobi"/>
+  </js-module>
+
+<platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="LoggerManager">
+            <param name="android-package" value="com.rokolabs.rokomobi.analytics.RMLoggerManager"/>
+        </feature>
+        <feature name="PortalManager">
+            <param name="android-package" value="com.rokolabs.rokomobi.PortalManager"/>
+        </feature>
+        <feature name="PushManager">
+            <param name="android-package" value="com.rokolabs.rokomobi.push.PushPlugin"/>
+        </feature>
+        <feature name="LinkManager">
+            <param name="android-package" value="com.rokolabs.rokomobi.link.LinkManager"/>
+        </feature>
+        <feature name="ShareManager">
+            <param name="android-package" value="com.rokolabs.rokomobi.share.ShareManager"/>
+        </feature>
+        <feature name="PromoManager">
+            <param name="android-package" value="com.rokolabs.rokomobi.promo.PromoManager"/>
+        </feature>
+        <feature name="ReferralManager">
+            <param name="android-package" value="com.rokolabs.rokomobi.referral.ReferralManager"/>
+        </feature>
+    </config-file>
+    <!--ANALYTICS SECTION START-->
+    <source-file src="src/android/com/rokolabs/rokomobi/analytics/RMLoggerManager.java" target-dir="src/com/rokolabs/rokomobi/analytics/"/>
+    <source-file src="src/android/com/rokolabs/rokomobi/analytics/Event.java" target-dir="src/com/rokolabs/rokomobi/analytics/"/>
+    <!--ANALYTICS SECTION END-->
+    <!--BASE SECTION START-->
+    <source-file src="src/android/com/rokolabs/rokomobi/base/BasePlugin.java" target-dir="src/com/rokolabs/rokomobi/base/"/>
+    <source-file src="src/android/com/rokolabs/rokomobi/base/Settings.java" target-dir="src/com/rokolabs/rokomobi/base/"/>
+    <source-file src="src/android/com/rokolabs/rokomobi/base/User.java" target-dir="src/com/rokolabs/rokomobi/base/"/>
+    <!--BASE SECTION END-->
+    <!--PORTAL MANAGER SECTION START-->
+    <source-file src="src/android/com/rokolabs/rokomobi/PortalManager.java" target-dir="src/com/rokolabs/rokomobi/"/>
+    <!--PORTAL MANAGER SECTION END-->
+    <!--PUSH SECTION START-->
+    <source-file src="src/android/com/rokolabs/rokomobi/push/PushActivityHandler.java" target-dir="src/com/rokolabs/rokomobi/push"/>
+    <source-file src="src/android/com/rokolabs/rokomobi/push/PushPlugin.java" target-dir="src/com/rokolabs/rokomobi/push"/>
+    <!--PUSH SECTION END-->
+    <!--LINK SECTION START-->
+    <source-file src="src/android/com/rokolabs/rokomobi/link/CreateLink.java" target-dir="src/com/rokolabs/rokomobi/link"/>
+    <source-file src="src/android/com/rokolabs/rokomobi/link/DeepLinkActivityHandler.java" target-dir="src/com/rokolabs/rokomobi/link"/>
+    <source-file src="src/android/com/rokolabs/rokomobi/link/LinkManager.java" target-dir="src/com/rokolabs/rokomobi/link"/>
+    <source-file src="src/android/com/rokolabs/rokomobi/link/ResultCreateLink.java" target-dir="src/com/rokolabs/rokomobi/link"/>
+    <!--LINK SECTION END-->
+    <!--SHARE SECTION START-->
+    <source-file src="src/android/com/rokolabs/rokomobi/share/ShareManager.java" target-dir="src/com/rokolabs/rokomobi/share"/>
+    <source-file src="src/android/com/rokolabs/rokomobi/share/ShareModel.java" target-dir="src/com/rokolabs/rokomobi/share"/>
+    <!--SHARE SECTION END-->
+    <!--PROMO SRCTION START-->
+    <source-file src="src/android/com/rokolabs/rokomobi/promo/PromoManager.java" target-dir="src/com/rokolabs/rokomobi/promo"/>
+    <source-file src="src/android/com/rokolabs/rokomobi/promo/PromoCodeFromNotificationModel.java" target-dir="src/com/rokolabs/rokomobi/promo"/>
+    <source-file src="src/android/com/rokolabs/rokomobi/promo/MarkPromoCodeAsUsed.java" target-dir="src/com/rokolabs/rokomobi/promo"/>
+    <!--PROPMO SECTION END-->
+    <!--REFERRAL SECTION END-->
+    <source-file src="src/android/com/rokolabs/rokomobi/referral/Discount.java" target-dir="src/com/rokolabs/rokomobi/referral"/>
+    <source-file src="src/android/com/rokolabs/rokomobi/referral/ReferralManager.java" target-dir="src/com/rokolabs/rokomobi/referral"/>
+    <source-file src="src/android/com/rokolabs/rokomobi/referral/ResponseActivatedDiscount.java" target-dir="src/com/rokolabs/rokomobi/referral"/>
+    <!--REFERRAL SECTION END-->
+
+    <resource-file src="libs/RokoMobi.aar" target="libs/RokoMobi.aar" />
+    <framework src="src/android/rokomobi.gradle" custom="true" type="gradleReference" />
+    
+    <hook type="before_compile" src="www/setupApplicationName.js"/>
+    
+    <framework src="com.android.support:appcompat-v7:23.4.0"/>
+    <framework src="com.google.code.gson:gson:2.7"/>
+    <framework src="com.google.android.gms:play-services-gcm:9.0.1"/>
+    <framework src="com.google.android.gms:play-services:9.0.1"/>
+    
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+        <uses-permission android:name="android.permission.WAKE_LOCK" />
+        <uses-permission android:name="android.permission.VIBRATE"/>
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+         <uses-permission android:name="android.permission.READ_CONTACTS" />
+        <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+        <permission android:name="$PACKAGE_NAME.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+        <uses-permission android:name="$PACKAGE_NAME.permission.C2D_MESSAGE" />
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <receiver
+            android:name="com.rokolabs.sdk.push.GCMReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter android:permission="com.google.android.c2dm.permission.SEND">
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                
+                <category android:name="com.rokolabs.mobitest" />
+            </intent-filter>
+            <intent-filter android:permission="com.google.android.c2dm.permission.SEND">
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                
+                <category android:name="com.rokolabs.mobitest" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.rokolabs.sdk.push.GCMIntentService" />
+        <activity
+            android:name="com.rokolabs.rokomobi.push.PushActivityHandler"
+            android:label="Push">
+            <intent-filter>
+                <action android:name="com.rokomobi.PUSH_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+          <activity
+            android:name="com.rokolabs.rokomobi.link.DeepLinkActivityHandler"
+            android:label="Deep Links">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="YOUR LINK"
+                    android:pathPrefix="/"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.rokolabs.sdk.push.inapp.InAppActivity"
+            android:label="In-App" />
+    </config-file>
+    
+    
+</platform>
+
+  <platform name="ios">
+    
+    <config-file target="config.xml" parent="/widget">
+     
+      <feature name="LinkManager">
+        <param name="ios-package" value="RMPLinkManager" />
+      </feature>
+      <feature name="ShareManager">
+        <param name="ios-package" value="RMPShareManager" />
+      </feature>
+      <feature name="LoggerManager">
+        <param name="ios-package" value="RMPLoggerManager" />
+      </feature>
+      <feature name="PromoManager">
+        <param name="ios-package" value="RMPPromoManager" />
+      </feature>
+      <feature name="ReferralManager">
+        <param name="ios-package" value="RMPReferralManager" />
+      </feature>
+      <feature name="PortalManager">
+        <param name="ios-package" value="RMPPortalManager" />
+      </feature>
+      <feature name="PushManager">
+        <param name="ios-package" value="RMPPushManager" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/RMPHelper.h" target-dir="RokoMobi"/>
+    <source-file src="src/ios/RMPHelper.m" target-dir="RokoMobi"/>
+    <header-file src="src/ios/RMPLinkManager.h" target-dir="RokoMobi"/>
+    <source-file src="src/ios/RMPLinkManager.m" target-dir="RokoMobi"/>
+    <header-file src="src/ios/RMPShareManager.h" target-dir="RokoMobi"/>
+    <source-file src="src/ios/RMPShareManager.m" target-dir="RokoMobi"/>
+    <header-file src="src/ios/RMPLoggerManager.h" target-dir="RokoMobi"/>
+    <source-file src="src/ios/RMPLoggerManager.m" target-dir="RokoMobi"/>
+    <header-file src="src/ios/RMPPromoManager.h" target-dir="RokoMobi"/>
+    <source-file src="src/ios/RMPPromoManager.m" target-dir="RokoMobi"/>
+    <header-file src="src/ios/RMPReferralManager.h" target-dir="RokoMobi"/>
+    <source-file src="src/ios/RMPReferralManager.m" target-dir="RokoMobi"/>
+    <header-file src="src/ios/RMPPortalManager.h" target-dir="RokoMobi"/>
+    <source-file src="src/ios/RMPPortalManager.m" target-dir="RokoMobi"/>
+    <header-file src="src/ios/RMPPushManager.h" target-dir="RokoMobi"/>
+    <source-file src="src/ios/RMPPushManager.m" target-dir="RokoMobi"/>
+    <header-file src="src/ios/Mappers/ROKOLink+ROKOLinkMapper.h" target-dir="RokoMobi/Mappers"/>
+    <source-file src="src/ios/Mappers/ROKOLink+ROKOLinkMapper.m" target-dir="RokoMobi/Mappers"/>
+    <header-file src="src/ios/Mappers/ROKODiscountItem+ROKODiscountItemMapper.h" target-dir="RokoMobi/Mappers"/>
+    <source-file src="src/ios/Mappers/ROKODiscountItem+ROKODiscountItemMapper.m" target-dir="RokoMobi/Mappers"/>
+    <header-file src="src/ios/Mappers/ROKOPromoDiscountItem+ROKOPromoDiscountItemMapper.h" target-dir="RokoMobi/Mappers"/>
+    <source-file src="src/ios/Mappers/ROKOPromoDiscountItem+ROKOPromoDiscountItemMapper.m" target-dir="RokoMobi/Mappers"/>
+    <header-file src="src/ios/Mappers/ROKOReferralDiscountItem+ROKOReferralDiscountItemMapper.h" target-dir="RokoMobi/Mappers"/>
+    <source-file src="src/ios/Mappers/ROKOReferralDiscountItem+ROKOReferralDiscountItemMapper.m" target-dir="RokoMobi/Mappers"/>
+    <header-file src="src/ios/Mappers/ROKOReferralDiscountInfo+ROKOReferralDiscountInfoMapper.h" target-dir="RokoMobi/Mappers"/>
+    <source-file src="src/ios/Mappers/ROKOReferralDiscountInfo+ROKOReferralDiscountInfoMapper.m" target-dir="RokoMobi/Mappers"/>
+    <header-file src="src/ios/Mappers/ROKOReferralCampaignInfo+ROKOReferralCampaignInfoMapper.h" target-dir="RokoMobi/Mappers"/>
+    <source-file src="src/ios/Mappers/ROKOReferralCampaignInfo+ROKOReferralCampaignInfoMapper.m" target-dir="RokoMobi/Mappers"/>
+
+    <header-file src="src/ios/Mappers/ROKOPortalInfo+ROKOPortalInfoMapper.h" target-dir="RokoMobi/Mappers"/>
+    <source-file src="src/ios/Mappers/ROKOPortalInfo+ROKOPortalInfoMapper.m" target-dir="RokoMobi/Mappers"/>
+    <header-file src="src/ios/Mappers/ROKOUserObject+ROKOUserObjectMapper.h" target-dir="RokoMobi/Mappers"/>
+    <source-file src="src/ios/Mappers/ROKOUserObject+ROKOUserObjectMapper.m" target-dir="RokoMobi/Mappers"/>
+    <header-file src="src/ios/Mappers/ROKOSessionInfo+ROKOSessionInfoMapper.h" target-dir="RokoMobi/Mappers"/>
+    <source-file src="src/ios/Mappers/ROKOSessionInfo+ROKOSessionInfoMapper.m" target-dir="RokoMobi/Mappers"/>
+
+    <header-file src="src/ios/EasyMapping/EasyMapping.h" target-dir="RokoMobi/EasyMapping"/>
+    <header-file src="src/ios/EasyMapping/EKCoreDataImporter.h" target-dir="RokoMobi/EasyMapping"/>
+    <source-file src="src/ios/EasyMapping/EKCoreDataImporter.m" target-dir="RokoMobi/EasyMapping"/>
+    <header-file src="src/ios/EasyMapping/EKManagedObjectMapper.h" target-dir="RokoMobi/EasyMapping"/>
+    <source-file src="src/ios/EasyMapping/EKManagedObjectMapper.m" target-dir="RokoMobi/EasyMapping"/>
+
+    <header-file src="src/ios/EasyMapping/EKManagedObjectMapping.h" target-dir="RokoMobi/EasyMapping"/>
+    <source-file src="src/ios/EasyMapping/EKManagedObjectMapping.m" target-dir="RokoMobi/EasyMapping"/>
+
+    <header-file src="src/ios/EasyMapping/EKManagedObjectModel.h" target-dir="RokoMobi/EasyMapping"/>
+    <source-file src="src/ios/EasyMapping/EKManagedObjectModel.m" target-dir="RokoMobi/EasyMapping"/>
+
+    <header-file src="src/ios/EasyMapping/EKMapper.h" target-dir="RokoMobi/EasyMapping"/>
+    <source-file src="src/ios/EasyMapping/EKMapper.m" target-dir="RokoMobi/EasyMapping"/>
+
+    <header-file src="src/ios/EasyMapping/EKMappingBlocks.h" target-dir="RokoMobi/EasyMapping"/>
+    <source-file src="src/ios/EasyMapping/EKMappingBlocks.m" target-dir="RokoMobi/EasyMapping"/>
+
+    <header-file src="src/ios/EasyMapping/EKMappingProtocol.h" target-dir="RokoMobi/EasyMapping"/>
+
+    <header-file src="src/ios/EasyMapping/EKObjectMapping.h" target-dir="RokoMobi/EasyMapping"/>
+    <source-file src="src/ios/EasyMapping/EKObjectMapping.m" target-dir="RokoMobi/EasyMapping"/>
+
+    <header-file src="src/ios/EasyMapping/EKObjectModel.h" target-dir="RokoMobi/EasyMapping"/>
+    <source-file src="src/ios/EasyMapping/EKObjectModel.m" target-dir="RokoMobi/EasyMapping"/>
+
+    <header-file src="src/ios/EasyMapping/EKPropertyHelper.h" target-dir="RokoMobi/EasyMapping"/>
+    <source-file src="src/ios/EasyMapping/EKPropertyHelper.m" target-dir="RokoMobi/EasyMapping"/>
+
+    <header-file src="src/ios/EasyMapping/EKPropertyMapping.h" target-dir="RokoMobi/EasyMapping"/>
+    <source-file src="src/ios/EasyMapping/EKPropertyMapping.m" target-dir="RokoMobi/EasyMapping"/>
+
+    <header-file src="src/ios/EasyMapping/EKRelationshipMapping.h" target-dir="RokoMobi/EasyMapping"/>
+    <source-file src="src/ios/EasyMapping/EKRelationshipMapping.m" target-dir="RokoMobi/EasyMapping"/>
+
+    <header-file src="src/ios/EasyMapping/EKSerializer.h" target-dir="RokoMobi/EasyMapping"/>
+    <source-file src="src/ios/EasyMapping/EKSerializer.m" target-dir="RokoMobi/EasyMapping"/>
+
+    <header-file src="src/ios/EasyMapping/NSArray+FlattenArray.h" target-dir="RokoMobi/EasyMapping"/>
+    <source-file src="src/ios/EasyMapping/NSArray+FlattenArray.m" target-dir="RokoMobi/EasyMapping"/>
+
+    <header-file src="src/ios/EasyMapping/NSDateFormatter+EasyMappingAdditions.h" target-dir="RokoMobi/EasyMapping"/>
+    <source-file src="src/ios/EasyMapping/NSDateFormatter+EasyMappingAdditions.m" target-dir="RokoMobi/EasyMapping"/>
+
+    <framework src="src/ios/Frameworks/ROKOMobi.framework" custom="true"/>
+    <resource-file src="src/ios/Frameworks/ROKOMobi.framework/ROKOMobiResources.bundle"/>
+  </platform>
+
+  <platform name="wp7">
+    <source-file src="src/wp7/Hello.cs"/>
+  </platform>
+
+</plugin>
