@@ -1,0 +1,33 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.rokolabs.rokomobi": {
+            "PACKAGE_NAME": "com.rokolabs.cordova.test"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.rokolabs.cordova.test"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.rokolabs.cordova.test"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.rokolabs.cordova.test"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.rokolabs.cordova.test"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.rokolabs.cordova.test"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.rokolabs.cordova.test"
+        }
+    },
+    "dependent_plugins": {}
+}

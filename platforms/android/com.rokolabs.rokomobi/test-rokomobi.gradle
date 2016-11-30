@@ -1,0 +1,24 @@
+repositories{    
+  jcenter()
+  flatDir{
+      dirs 'libs'
+   }
+}
+
+dependencies {
+   compile(name:'RokoMobi', ext:'aar')
+}
+
+android {
+  packagingOptions {
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/LICENSE'
+  }
+  defaultConfig {
+    multiDexEnabled true
+
+    dexOptions {
+      javaMaxHeapSize "4g"
+    }
+  }
+}
