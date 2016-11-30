@@ -140,6 +140,7 @@
 		88FCAED9908542B99985C05C /* EKManagedObjectMapping.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = EKManagedObjectMapping.h; path = com.rokolabs.rokomobi/RokoMobi/EasyMapping/EKManagedObjectMapping.h; sourceTree = "<group>"; };
 		8C8E5BD0988340A29D9573D4 /* EKManagedObjectMapper.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = EKManagedObjectMapper.h; path = com.rokolabs.rokomobi/RokoMobi/EasyMapping/EKManagedObjectMapper.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* IonicTestProject-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "IonicTestProject-Info.plist"; path = "IonicTestProject/IonicTestProject-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
+		8F5235181DEF22A700547D90 /* IonicTestProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = IonicTestProject.entitlements; path = IonicTestProject/IonicTestProject.entitlements; sourceTree = "<group>"; };
 		992E113397654D38903316C1 /* EKSerializer.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = EKSerializer.m; path = com.rokolabs.rokomobi/RokoMobi/EasyMapping/EKSerializer.m; sourceTree = "<group>"; };
 		A0E062BB161A48448C79646B /* EKObjectModel.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = EKObjectModel.m; path = com.rokolabs.rokomobi/RokoMobi/EasyMapping/EKObjectModel.m; sourceTree = "<group>"; };
 		A4CC3EEEC8294F3584A3991F /* NSDateFormatter+EasyMappingAdditions.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "NSDateFormatter+EasyMappingAdditions.m"; path = "com.rokolabs.rokomobi/RokoMobi/EasyMapping/NSDateFormatter+EasyMappingAdditions.m"; sourceTree = "<group>"; };
@@ -210,6 +211,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				8F5235181DEF22A700547D90 /* IonicTestProject.entitlements */,
 				EB87FDF41871DAF40020F90C /* config.xml */,
 				EB87FDF31871DA8E0020F90C /* www */,
 				EB87FDF11871DA420020F90C /* Staging */,
@@ -399,6 +401,11 @@
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 8UDWX3Z26Y;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -534,6 +541,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = IonicTestProject/IonicTestProject.entitlements;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 8UDWX3Z26Y;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -561,6 +569,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = IonicTestProject/IonicTestProject.entitlements;
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = 8UDWX3Z26Y;
 				FRAMEWORK_SEARCH_PATHS = (
