@@ -25,19 +25,15 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 
-import com.rokolabs.sdk.RokoMobi;
+import org.apache.cordova.CordovaActivity;
 
-import org.apache.cordova.*;
-
-public class MainActivity extends CordovaActivity
-{
+public class MainActivity extends CordovaActivity {
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (this.checkCallingOrSelfPermission("android.permission.READ_PHONE_STATE") == PackageManager.PERMISSION_DENIED
                 && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if(this instanceof Activity) {
+            if (this instanceof Activity) {
                 String[] permissions = {
                         "android.permission.READ_PHONE_STATE"
                 };
@@ -45,13 +41,10 @@ public class MainActivity extends CordovaActivity
             }
         }
 
-        // enable Cordova apps to be started in the background
         Bundle extras = getIntent().getExtras();
         if (extras != null && extras.getBoolean("cdvStartInBackground", false)) {
             moveTaskToBack(true);
         }
-
-        // Set by <content src="index.html" /> in config.xml
 
         com.rokolabs.sdk.RokoMobi.start(this);
         loadUrl(launchUrl);
