@@ -11,7 +11,9 @@ $ ionic resources
 $ cordova plugin add cordova-plugin-rokomobi
 ```
 
-# Credentials (You can change it on platforms/ios/IonictestProject/IonicTestProject-Info.plist)
+# Credentials 
+
+* You can change it on platforms/ios/IonictestProject/IonicTestProject-Info.plist
 
 ```javascript
 baseURL: "api.roko.mobi/v1/",
@@ -25,4 +27,4 @@ https://portal.roko.mobi/devCompany-23400/application-645595/settings/apps/64559
 
 # Usage
 
-* Menu -> Login -> Input any user name -> Press Login *
+* Menu -> Login -> Input any user name -> Press Login
