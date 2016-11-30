@@ -43,7 +43,7 @@ angular.module('starter.controllers', [])
             //rokomobi.addEvent({name:"Login",params:{a:"a"}},success,failure);
             
             
-            rokomobi.setUser({userName:"Sergey"},success,failure);
+            rokomobi.setUser({userName: $scope.loginData.username},success,failure);
             
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
