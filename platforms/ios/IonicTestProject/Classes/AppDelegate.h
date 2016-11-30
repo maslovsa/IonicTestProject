@@ -27,7 +27,10 @@
 
 #import <Cordova/CDVViewController.h>
 #import <Cordova/CDVAppDelegate.h>
+#import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate : CDVAppDelegate {}
+@interface AppDelegate : CDVAppDelegate   <UIApplicationDelegate, UNUserNotificationCenterDelegate>
+
+//@interface AppDelegate : CDVAppDelegate {}
 
 @end

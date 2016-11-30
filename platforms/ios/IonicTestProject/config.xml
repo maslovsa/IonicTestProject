@@ -15,6 +15,44 @@
         <param name="ios-package" value="CDVGestureHandler" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="LinkManager">
+        <param name="ios-package" value="RMPLinkManager" />
+    </feature>
+    <feature name="ShareManager">
+        <param name="ios-package" value="RMPShareManager" />
+    </feature>
+    <feature name="LoggerManager">
+        <param name="ios-package" value="RMPLoggerManager" />
+    </feature>
+    <feature name="PromoManager">
+        <param name="ios-package" value="RMPPromoManager" />
+    </feature>
+    <feature name="ReferralManager">
+        <param name="ios-package" value="RMPReferralManager" />
+    </feature>
+    <feature name="PortalManager">
+        <param name="ios-package" value="RMPPortalManager" />
+    </feature>
+    <feature name="PushManager">
+        <param name="ios-package" value="RMPPushManager" />
+    </feature>
+    <feature name="Console">
+        <param name="ios-package" value="CDVLogger" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Keyboard">
+        <param name="ios-package" onload="true" value="IonicKeyboard" />
+    </feature>
     <name>IonicTestProject</name>
     <description>
         An Ionic Framework and Cordova project with RokoMobi plugin.
@@ -66,50 +104,12 @@
     <preference name="PageLength" value="0" />
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="SplashScreenDelay" value="2000" />
     <preference name="FadeSplashScreenDuration" value="2000" />
     <preference name="android-minSdkVersion" value="16" />
     <preference name="SplashScreen" value="screen" />
-    <feature name="LinkManager">
-        <param name="ios-package" value="RMPLinkManager" />
-    </feature>
-    <feature name="ShareManager">
-        <param name="ios-package" value="RMPShareManager" />
-    </feature>
-    <feature name="LoggerManager">
-        <param name="ios-package" value="RMPLoggerManager" />
-    </feature>
-    <feature name="PromoManager">
-        <param name="ios-package" value="RMPPromoManager" />
-    </feature>
-    <feature name="ReferralManager">
-        <param name="ios-package" value="RMPReferralManager" />
-    </feature>
-    <feature name="PortalManager">
-        <param name="ios-package" value="RMPPortalManager" />
-    </feature>
-    <feature name="PushManager">
-        <param name="ios-package" value="RMPPushManager" />
-    </feature>
-    <feature name="Console">
-        <param name="ios-package" value="CDVLogger" />
-    </feature>
-    <feature name="StatusBar">
-        <param name="ios-package" value="CDVStatusBar" />
-        <param name="onload" value="true" />
-    </feature>
-    <preference name="StatusBarOverlaysWebView" value="true" />
-    <preference name="StatusBarStyle" value="lightcontent" />
-    <feature name="Device">
-        <param name="ios-package" value="CDVDevice" />
-    </feature>
-    <feature name="SplashScreen">
-        <param name="ios-package" value="CDVSplashScreen" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="Keyboard">
-        <param name="ios-package" onload="true" value="IonicKeyboard" />
-    </feature>
 </widget>

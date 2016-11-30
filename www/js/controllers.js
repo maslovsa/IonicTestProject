@@ -33,7 +33,17 @@ angular.module('starter.controllers', [])
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
 
-                
+            var success = function(){
+            alert("OK");
+            };
+            var failure = function(message){
+            alert("Error calling plugin "+message);
+            };
+            
+            //rokomobi.addEvent({name:"Login",params:{a:"a"}},success,failure);
+            
+            
+            rokomobi.setUser({userName:"Sergey"},success,failure);
             
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
